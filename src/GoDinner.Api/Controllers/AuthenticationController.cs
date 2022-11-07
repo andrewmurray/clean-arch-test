@@ -20,7 +20,12 @@ public class AuthenticationController : ControllerBase
     {
         var result = _authenticationService.Register(request.FirstName, request.LastName, request.Email, request.Password);
 
-        return Ok(new AuthenticationResponse(result.Id, result.FirstName, result.LastName, result.Email, result.Token));
+        return Ok(new AuthenticationResponse(
+            result.Id,
+            result.FirstName,
+            result.LastName,
+            result.Email,
+            result.Token));
     }
 
     [HttpPost("login")]
